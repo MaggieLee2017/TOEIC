@@ -1,0 +1,132 @@
+{
+    "reading_tests": [
+        {
+            "id": "reading-001",
+            "type": "email",
+            "passage": "To: All Staff\nFrom: Human Resources\nDate: March 15\nSubject: New Health Insurance Policy\n\nDear Colleagues,\n\nWe are pleased to announce that starting April 1, all employees will be enrolled in our new comprehensive health insurance plan. The new plan offers better coverage at a lower cost compared to our previous policy.\n\nKey benefits include:\n- Full coverage for annual health checkups\n- Dental and vision care included\n- 24/7 telemedicine services\n\nA detailed information packet will be distributed to all departments by March 20. If you have any questions, please contact the HR department at extension 205.\n\nBest regards,\nHR Department",
+            "passage_zh": "收件人：全體員工\n寄件人：人力資源部\n日期：3 月 15 日\n主旨：新的健康保險政策\n\n親愛的同事們，\n\n我們很高興地宣布，從 4 月 1 日起，所有員工將加入我們新的全面健康保險計劃。與之前的政策相比，新計劃以更低的成本提供更好的保障。\n\n主要福利包括：\n- 年度健康檢查全額給付\n- 包含牙科和視力照護\n- 全天候遠距醫療服務\n\n詳細資訊包將於 3 月 20 日前分發至各部門。如有任何問題，請致電分機 205 聯繫人力資源部。\n\n此致\n人力資源部",
+            "questions": [
+                {
+                    "id": "reading-001-q1",
+                    "question": "What is the purpose of this email?",
+                    "question_zh": "這封電子郵件的目的是什麼？",
+                    "choices": [
+                        "To announce a new health insurance plan",
+                        "To schedule health checkups",
+                        "To increase insurance costs",
+                        "To hire new HR staff"
+                    ],
+                    "answer_index": 0,
+                    "explanation_zh": "郵件開頭明確說明要宣布新的健康保險計劃，因此選項 A 正確。"
+                },
+                {
+                    "id": "reading-001-q2",
+                    "question": "When will the new policy take effect?",
+                    "question_zh": "新政策何時生效？",
+                    "choices": [
+                        "March 15",
+                        "March 20",
+                        "April 1",
+                        "Extension 205"
+                    ],
+                    "answer_index": 2,
+                    "explanation_zh": "郵件提到「starting April 1」，因此選項 C 正確。"
+                },
+                {
+                    "id": "reading-001-q3",
+                    "question": "What is NOT mentioned as a benefit of the new plan?",
+                    "question_zh": "以下哪項不是新計劃的福利？",
+                    "choices": [
+                        "Annual health checkups",
+                        "Dental care",
+                        "Free gym membership",
+                        "Telemedicine services"
+                    ],
+                    "answer_index": 2,
+                    "explanation_zh": "郵件提到健檢、牙科和遠距醫療，但未提及健身房會員，因此選項 C 正確。"
+                }
+            ]
+        },
+        {
+            "id": "reading-002",
+            "type": "notice",
+            "passage": "BUILDING MAINTENANCE NOTICE\n\nDate: May 10\n\nDue to essential elevator maintenance, the north elevator will be out of service from May 15 to May 17. During this period, please use the south elevator or the emergency stairwell.\n\nThe maintenance will be conducted from 7:00 AM to 6:00 PM each day. We apologize for any inconvenience this may cause and appreciate your cooperation.\n\nFor urgent matters during the maintenance period, please contact Building Management at (555) 123-4567.\n\nThank you for your understanding.\n\nBuilding Management",
+            "passage_zh": "大樓維護通知\n\n日期：5 月 10 日\n\n由於必要的電梯維護，北側電梯將於 5 月 15 日至 5 月 17 日停止服務。期間請使用南側電梯或緊急樓梯間。\n\n維護將於每日上午 7:00 至下午 6:00 進行。對於可能造成的任何不便，我們深表歉意，並感謝您的配合。\n\n在維護期間如有緊急事項，請致電 (555) 123-4567 聯繫大樓管理處。\n\n感謝您的理解。\n\n大樓管理處",
+            "questions": [
+                {
+                    "id": "reading-002-q1",
+                    "question": "What is being maintained?",
+                    "question_zh": "什麼正在維護？",
+                    "choices": [
+                        "The north elevator",
+                        "The south elevator",
+                        "The stairwell",
+                        "The entire building"
+                    ],
+                    "answer_index": 0,
+                    "explanation_zh": "通知明確提到北側電梯將進行維護，因此選項 A 正確。"
+                },
+                {
+                    "id": "reading-002-q2",
+                    "question": "How long will the maintenance last?",
+                    "question_zh": "維護將持續多久？",
+                    "choices": [
+                        "One day",
+                        "Two days",
+                        "Three days",
+                        "One week"
+                    ],
+                    "answer_index": 2,
+                    "explanation_zh": "從 5 月 15 日到 5 月 17 日共三天，因此選項 C 正確。"
+                }
+            ]
+        },
+        {
+            "id": "reading-003",
+            "type": "advertisement",
+            "passage": "PROFESSIONAL DEVELOPMENT WORKSHOP\n\n\"Effective Communication in the Workplace\"\n\nDate: June 5, 2024\nTime: 9:00 AM - 4:00 PM\nLocation: City Conference Center, Room 301\nFee: $150 per person (includes lunch and materials)\n\nLearn essential communication skills including:\n• Active listening techniques\n• Clear and concise writing\n• Presentation skills\n• Conflict resolution strategies\n\nLimited to 30 participants. Register by May 25 to secure your spot.\n\nFor registration, visit www.profdevworkshops.com or call (555) 987-6543.\n\nEarly bird special: Register by May 15 and save $30!",
+            "passage_zh": "專業發展工作坊\n\n「職場有效溝通」\n\n日期：2024 年 6 月 5 日\n時間：上午 9:00 - 下午 4:00\n地點：市會議中心 301 室\n費用：每人 $150（包含午餐和教材）\n\n學習基本溝通技巧，包括：\n• 積極聆聽技巧\n• 清晰簡潔的寫作\n• 簡報技巧\n• 衝突解決策略\n\n限額 30 人。請於 5 月 25 日前註冊以確保名額。\n\n註冊請造訪 www.profdevworkshops.com 或致電 (555) 987-6543。\n\n早鳥優惠：5 月 15 日前註冊可省 $30！",
+            "questions": [
+                {
+                    "id": "reading-003-q1",
+                    "question": "What is the topic of the workshop?",
+                    "question_zh": "工作坊的主題是什麼？",
+                    "choices": [
+                        "Time management",
+                        "Workplace communication",
+                        "Financial planning",
+                        "Leadership skills"
+                    ],
+                    "answer_index": 1,
+                    "explanation_zh": "標題明確寫著「Effective Communication in the Workplace」，因此選項 B 正確。"
+                },
+                {
+                    "id": "reading-003-q2",
+                    "question": "How much can you save with the early bird discount?",
+                    "question_zh": "早鳥優惠可以省多少錢？",
+                    "choices": [
+                        "$15",
+                        "$25",
+                        "$30",
+                        "$150"
+                    ],
+                    "answer_index": 2,
+                    "explanation_zh": "通知最後提到早鳥優惠可省 $30，因此選項 C 正確。"
+                },
+                {
+                    "id": "reading-003-q3",
+                    "question": "What is included in the registration fee?",
+                    "question_zh": "註冊費包含什麼？",
+                    "choices": [
+                        "Only the workshop",
+                        "Workshop and transportation",
+                        "Workshop, lunch, and materials",
+                        "Lunch only"
+                    ],
+                    "answer_index": 2,
+                    "explanation_zh": "費用說明中提到「includes lunch and materials」，因此選項 C 正確。"
+                }
+            ]
+        }
+    ]
+}

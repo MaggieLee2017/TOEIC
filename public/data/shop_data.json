@@ -1,0 +1,78 @@
+{
+    "shop_items": [
+        {
+            "id": "food-001",
+            "name": "基礎飼料",
+            "name_en": "Basic Food",
+            "type": "food",
+            "price": 30,
+            "hunger_recovery": 20,
+            "emoji": "🍖",
+            "description": "基本的寵物飼料，補充少量飽食度"
+        },
+        {
+            "id": "food-002",
+            "name": "高級罐罐",
+            "name_en": "Premium Canned Food",
+            "type": "food",
+            "price": 60,
+            "hunger_recovery": 50,
+            "happiness_boost": 10,
+            "emoji": "🥫",
+            "description": "美味的罐頭食品，寵物會很開心！"
+        },
+        {
+            "id": "food-003",
+            "name": "美味點心",
+            "name_en": "Delicious Treat",
+            "type": "treat",
+            "price": 100,
+            "hunger_recovery": 30,
+            "happiness_boost": 25,
+            "emoji": "🍰",
+            "description": "特別的獎勵點心，大幅提升快樂度"
+        },
+        {
+            "id": "food-004",
+            "name": "營養餐",
+            "name_en": "Nutritious Meal",
+            "type": "food",
+            "price": 80,
+            "hunger_recovery": 70,
+            "happiness_boost": 5,
+            "emoji": "🍱",
+            "description": "營養均衡的完整餐點"
+        },
+        {
+            "id": "toy-001",
+            "name": "小球玩具",
+            "name_en": "Ball Toy",
+            "type": "toy",
+            "price": 80,
+            "happiness_boost": 20,
+            "emoji": "⚽",
+            "description": "可愛的小球，讓寵物開心玩耍"
+        },
+        {
+            "id": "toy-002",
+            "name": "絨毛玩偶",
+            "name_en": "Plush Toy",
+            "type": "toy",
+            "price": 120,
+            "happiness_boost": 30,
+            "emoji": "🧸",
+            "description": "柔軟的玩偶，寵物最愛抱著睡覺"
+        },
+        {
+            "id": "snack-001",
+            "name": "小零食",
+            "name_en": "Snack",
+            "type": "treat",
+            "price": 40,
+            "hunger_recovery": 15,
+            "happiness_boost": 15,
+            "emoji": "🦴",
+            "description": "小小的零食獎勵"
+        }
+    ]
+}

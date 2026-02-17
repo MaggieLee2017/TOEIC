@@ -1,0 +1,89 @@
+{
+    "listening_tests": [
+        {
+            "id": "listen-001",
+            "type": "photo_description",
+            "image_url": "/images/listening_woman_typing.png",
+            "audio_text": "The woman is typing on a laptop computer at her desk.",
+            "audio_text_zh": "這位女士正在她的桌子上用筆記型電腦打字。",
+            "question": "Which statement best describes what you hear?",
+            "question_zh": "哪個陳述最能描述你所聽到的內容？",
+            "choices": [
+                "The woman is typing on a laptop.",
+                "The woman is reading a book.",
+                "The man is making a phone call.",
+                "The desk is empty."
+            ],
+            "answer_index": 0,
+            "explanation_zh": "聽力內容提到女士正在筆電上打字，因此選項 A 正確。"
+        },
+        {
+            "id": "listen-002",
+            "type": "question_response",
+            "image_url": "/images/listening_meeting_schedule.png",
+            "audio_text": "When is the meeting scheduled?",
+            "audio_text_zh": "會議安排在什麼時候？",
+            "question": "What is the best response?",
+            "question_zh": "什麼是最佳回應？",
+            "choices": [
+                "It's at 3 p.m. tomorrow.",
+                "In the conference room.",
+                "Yes, I'll attend.",
+                "About 30 minutes."
+            ],
+            "answer_index": 0,
+            "explanation_zh": "問題詢問會議「何時」安排，應回答時間，因此選項 A（明天下午三點）正確。"
+        },
+        {
+            "id": "listen-003",
+            "type": "short_conversation",
+            "image_url": "/images/listening_email_conversation.png",
+            "audio_text": "Hi Sarah, did you receive my email about the budget report? Yes, I got it this morning and I'll review it by Friday.",
+            "audio_text_zh": "嗨 Sarah，你收到我關於預算報告的電子郵件了嗎？有的，我今天早上收到了，我會在週五前審閱。",
+            "question": "What will Sarah do?",
+            "question_zh": "Sarah 會做什麼？",
+            "choices": [
+                "Review the budget report by Friday.",
+                "Send an email this morning.",
+                "Prepare the budget report.",
+                "Attend a meeting on Friday."
+            ],
+            "answer_index": 0,
+            "explanation_zh": "Sarah 說她會在週五前審閱報告，因此選項 A 正確。"
+        },
+        {
+            "id": "listen-004",
+            "type": "announcement",
+            "image_url": "/images/listening_parking_announcement.png",
+            "audio_text": "Attention all employees: The parking lot will be closed for maintenance from Monday to Wednesday next week. Please use the street parking during this period.",
+            "audio_text_zh": "各位員工請注意：停車場將於下週一至週三關閉進行維護。期間請使用路邊停車。",
+            "question": "What is the announcement about?",
+            "question_zh": "通知是關於什麼？",
+            "choices": [
+                "Parking lot maintenance.",
+                "A new parking policy.",
+                "Office renovation.",
+                "A company meeting."
+            ],
+            "answer_index": 0,
+            "explanation_zh": "通知提到停車場將進行維護，因此選項 A 正確。"
+        },
+        {
+            "id": "listen-005",
+            "type": "phone_message",
+            "image_url": "/images/listening_phone_call.png",
+            "audio_text": "Hello, this is John calling for Ms. Chen. I'd like to confirm our appointment for next Tuesday at 10 a.m. Please call me back at 555-0123.",
+            "audio_text_zh": "您好，我是 John，找 Chen 女士。我想確認我們下週二上午十點的約會。請回電 555-0123。",
+            "question": "Why is John calling?",
+            "question_zh": "John 為什麼打電話？",
+            "choices": [
+                "To confirm an appointment.",
+                "To cancel a meeting.",
+                "To reschedule an interview.",
+                "To request a document."
+            ],
+            "answer_index": 0,
+            "explanation_zh": "John 說他想確認約會，因此選項 A 正確。"
+        }
+    ]
+}
