@@ -1134,10 +1134,22 @@ function App() {
                                 {currentQuestion.translation && (
                                     <p className="question-translation">{currentQuestion.translation}</p>
                                 )}
+
+                                {/* New: Show choices text in prompt for Vocabulary Quiz */}
+                                {mode === 'quiz' && currentQuestion.choices && (
+                                    <div className="prompt-choices">
+                                        {currentQuestion.choices.map((choice, i) => (
+                                            <div key={i} className="prompt-choice-item">
+                                                <span className="prompt-choice-letter">({String.fromCharCode(65 + i)})</span>
+                                                <span className="prompt-choice-text">{choice}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
 
-                        <div className="choices-grid">
+                        <div className={`choices-grid ${mode === 'quiz' ? 'quiz-letters-only' : ''}`}>
                             {currentQuestion.choices.map((choice, index) => (
                                 <button
                                     key={index}
@@ -1149,7 +1161,9 @@ function App() {
                                     disabled={selectedAnswer !== null}
                                 >
                                     <span className="choice-letter">{String.fromCharCode(65 + index)}</span>
-                                    <span className="choice-text">{choice}</span>
+                                    {/* Hide choice text in button for Quiz mode */}
+                                    {mode !== 'quiz' && <span className="choice-text">{choice}</span>}
+
                                     {selectedAnswer === index && (
                                         <span className="choice-icon">
                                             {index === currentQuestion.answer_index ? '✓' : '✗'}

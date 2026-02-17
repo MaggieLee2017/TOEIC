@@ -1970,3 +1970,157 @@ body {
 .shop-buy-btn:disabled:active {
   transform: none;
 }
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+   ======================================== */
+@media (max-width: 768px) {
+
+  /* 1. Global Layout */
+  body {
+    padding: 10px;
+  }
+
+  .app {
+    padding: 20px 15px;
+    min-height: auto;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* 2. Header and Navigation */
+  .app-header {
+    margin-bottom: 24px;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .app-header p {
+    font-size: 0.95rem;
+  }
+
+  .nav-buttons {
+    gap: 12px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 3. Quiz Interface */
+  .question-prompt {
+    padding: 16px;
+  }
+
+  .prompt-text {
+    font-size: 1.15rem;
+  }
+
+  .choices-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .choice-card {
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+
+  /* 4. Alphabet Page Fixes */
+  .alphabet-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .alphabet-tab-btn {
+    flex-shrink: 0;
+    min-width: 36px;
+  }
+
+  /* 5. Shop & Pet UI */
+  .shop-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .col-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .choices-grid.quiz-letters-only {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* ========================================
+   NEW QUIZ LAYOUT (LETTERS ONLY)
+   ======================================== */
+.prompt-choices {
+  margin-top: 20px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+}
+
+.prompt-choice-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.prompt-choice-letter {
+  font-weight: bold;
+  margin-right: 10px;
+  color: var(--primary-color);
+  min-width: 25px;
+  flex-shrink: 0;
+}
+
+/* Quiz Letters Grid - 4 buttons in a row */
+.choices-grid.quiz-letters-only {
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.quiz-letters-only .choice-card {
+  aspect-ratio: 1;
+  /* Make them square */
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 80px;
+  border-radius: 50%;
+  /* Circle buttons */
+}
+
+.quiz-letters-only .choice-letter {
+  margin-right: 0;
+  /* Remove margin since no text */
+  background: none;
+  font-weight: bold;
+  color: inherit;
+  width: auto;
+  height: auto;
+}
