@@ -3,7 +3,7 @@
         {
             "id": "listen-001",
             "type": "photo_description",
-            "image_url": "/images/listening_woman_typing.png",
+            "image_url": "images/listening_woman_typing.png",
             "audio_text": "The woman is typing on a laptop computer at her desk.",
             "audio_text_zh": "這位女士正在她的桌子上用筆記型電腦打字。",
             "question": "Which statement best describes what you hear?",
@@ -20,7 +20,7 @@
         {
             "id": "listen-002",
             "type": "question_response",
-            "image_url": "/images/listening_meeting_schedule.png",
+            "image_url": "images/listening_meeting_schedule.png",
             "audio_text": "When is the meeting scheduled?",
             "audio_text_zh": "會議安排在什麼時候？",
             "question": "What is the best response?",
@@ -37,7 +37,7 @@
         {
             "id": "listen-003",
             "type": "short_conversation",
-            "image_url": "/images/listening_email_conversation.png",
+            "image_url": "images/listening_email_conversation.png",
             "audio_text": "Hi Sarah, did you receive my email about the budget report? Yes, I got it this morning and I'll review it by Friday.",
             "audio_text_zh": "嗨 Sarah，你收到我關於預算報告的電子郵件了嗎？有的，我今天早上收到了，我會在週五前審閱。",
             "question": "What will Sarah do?",
@@ -54,7 +54,7 @@
         {
             "id": "listen-004",
             "type": "announcement",
-            "image_url": "/images/listening_parking_announcement.png",
+            "image_url": "images/listening_parking_announcement.png",
             "audio_text": "Attention all employees: The parking lot will be closed for maintenance from Monday to Wednesday next week. Please use the street parking during this period.",
             "audio_text_zh": "各位員工請注意：停車場將於下週一至週三關閉進行維護。期間請使用路邊停車。",
             "question": "What is the announcement about?",
@@ -71,7 +71,7 @@
         {
             "id": "listen-005",
             "type": "phone_message",
-            "image_url": "/images/listening_phone_call.png",
+            "image_url": "images/listening_phone_call.png",
             "audio_text": "Hello, this is John calling for Ms. Chen. I'd like to confirm our appointment for next Tuesday at 10 a.m. Please call me back at 555-0123.",
             "audio_text_zh": "您好，我是 John，找 Chen 女士。我想確認我們下週二上午十點的約會。請回電 555-0123。",
             "question": "Why is John calling?",
