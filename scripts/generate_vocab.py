@@ -977,57 +977,90 @@ def generate_question(word_entry, all_words_in_cat, idx):
     meaning_str = "、".join(meanings)
     first_meaning = meanings[0] if isinstance(meanings, list) else meanings
     
+    # --- Context-Aware Sentence Generation ---
+    # Strategy: Use the specific collocation provided in word data to build a natural sentence.
+    # This avoids generic "The company decided to [noun]" issues.
     
-    # Use sentence templates for cloze questions
-    templates = TEMPLATES.get(pos, TEMPLATES["n"])
-    zh_templates = {
-        "v": [
-            "公司決定{word}以提升整體績效。",
-            "管理層計劃在本財年結束前{word}。",
-            "在處理複雜的商業情況時，{word}是很重要的。",
-            "主管要求團隊{word}作為新計畫的一部分。",
-            "在當今競爭激烈的市場中，公司必須{word}才能保持領先。",
-            "董事會投票決定立即{word}提議的變更。",
-            "員工應按照公司準則{word}。",
-            "執行長在季度會議上強調需要{word}。",
-        ],
-        "n": [
-            "在董事會會議上徹底討論了{word}。",
-            "有效的{word}對任何成功的組織都至關重要。",
-            "公司的{word}在本季度有顯著改善。",
-            "向管理團隊提交了詳細的{word}。",
-            "{word}將在下週由委員會審查。",
-            "良好的{word}可以提高員工滿意度。",
-            "年度{word}顯示公司前景看好。",
-            "適當的{word}是商業成功的關鍵因素。",
-        ],
-        "adj": [
-            "{word}的方法幫助公司實現了目標。",
-            "{word}的策略對長期成功是必要的。",
-            "經理稱讚團隊{word}的表現。",
-            "{word}的結果超出了所有人的預期。",
-            "在工作場所保持高標準是{word}的。",
-            "公司今年採用了更{word}的政策。",
-            "{word}的解決方案快速有效地解決了問題。",
-            "投資者對專案{word}的結果感到滿意。",
-        ],
-        "adv": [
-            "專案{word}提前完成。",
-            "團隊{word}工作以滿足緊迫的期限。",
-            "銷售額在過去一季{word}增長。",
-            "該政策在所有部門{word}執行。",
-        ],
-    }
+    full_sentence = ""
+    zh_sentence = ""
     
-    # Select template based on index
-    template_idx = idx % len(templates)
-    sentence_template = templates[template_idx]
-    zh_template_list = zh_templates.get(pos, zh_templates["n"])
-    zh_sentence = zh_template_list[template_idx % len(zh_template_list)].format(word=first_meaning)
+    # Advanced Template Logic
+    if collocation and len(collocation.strip()) > len(word):
+        # Use Collocation Context
+        col_text = collocation.strip()
+        
+        # 1. VERBS
+        if pos == 'v':
+            v_templates = [
+                ("The manager decided to {col}.", "經理決定{zh_col}。"),
+                ("It is important to {col} carefully.", "謹慎地{zh_col}是很重要的。"),
+                ("They plan to {col} next week.", "他們計劃下週{zh_col}。"),
+                ("We need to {col} to improve efficiency.", "我們需要{zh_col}以提高效率。"),
+                ("Please {col} as soon as possible.", "請儘快{zh_col}。"),
+                ("The team worked hard to {col}.", "團隊努力{zh_col}。"),
+            ]
+            tmpl, zh_tmpl = v_templates[idx % len(v_templates)]
+            full_sentence = tmpl.format(col=col_text)
+            # Simple zh construction (imperfect but better than nothing)
+            zh_sentence = zh_tmpl.format(zh_col=meaning_str) 
+
+        # 2. NOUNS
+        elif pos == 'n':
+            n_templates = [
+                ("The {col} was discussed in the meeting.", "會議中討論了{zh_col}。"),
+                ("We need to analyze the {col}.", "我們需要分析{zh_col}。"),
+                ("This report focuses on {col}.", "這份報告著重於{zh_col}。"),
+                ("Effective {col} is crucial for success.", "有效的{zh_col}對成功至關重要。"),
+                ("They requested more information about the {col}.", "他們要求更多關於{zh_col}的資訊。"),
+            ]
+            tmpl, zh_tmpl = n_templates[idx % len(n_templates)]
+            full_sentence = tmpl.format(col=col_text)
+            zh_sentence = zh_tmpl.format(zh_col=meaning_str)
+
+        # 3. ADJECTIVES
+        elif pos == 'adj':
+             adj_templates = [
+                ("The result was a {col}.", "結果是一個{zh_col}。"),
+                ("They are looking for a {col} solution.", "他們正在尋找一個{zh_col}的解決方案。"),
+                ("Specifically, the {col} caused a delay.", "具體來說，{zh_col}導致了延誤。"),
+                ("It is considered a {col} approach.", "這被認為是一種{zh_col}的方法。"),
+            ]
+             tmpl, zh_tmpl = adj_templates[idx % len(adj_templates)]
+             full_sentence = tmpl.format(col=col_text)
+             zh_sentence = zh_tmpl.format(zh_col=meaning_str)
+
+        # 4. ADVERBS
+        elif pos == 'adv':
+            adv_templates = [
+                ("The process {col}.", "這個過程{zh_col}。"),
+                ("She {col} completed the task.", "她{zh_col}完成了任務。"),
+                ("Sales figures {col} increased.", "銷售數字{zh_col}增長。"),
+            ]
+            tmpl, zh_tmpl = adv_templates[idx % len(adv_templates)]
+            full_sentence = tmpl.format(col=col_text)
+            zh_sentence = zh_tmpl.format(zh_col=meaning_str)
+            
+    # Fallback to Generic Generation if collocation is not usable
+    if not full_sentence:
+         # Simplified fallback (similar to old logic but cleaner)
+         if pos == 'v':
+             full_sentence = f"The company decided to {word}."
+             zh_sentence = f"公司決定{first_meaning}。"
+         elif pos == 'n':
+             full_sentence = f"The {word} allows for better management."
+             zh_sentence = f"這個{first_meaning}允許更好的管理。"
+         elif pos == 'adj':
+             full_sentence = f"The strategy was {word} and effective."
+             zh_sentence = f"這個策略是{first_meaning}且有效的。"
+         else:
+             full_sentence = f"Please proceed {word}."
+             zh_sentence = f"請{first_meaning}進行。"
+
+    # Ensure sentence starts with capital
+    full_sentence = full_sentence[0].upper() + full_sentence[1:]
     
-    # Create cloze question by replacing word with blank
-    full_sentence = sentence_template.format(word=word)
-    cloze_sentence = sentence_template.format(word="____")
+    # Create Cloze
+    cloze_sentence = full_sentence.replace(word, "____")
     
     # Detailed Explanation Generation
     pos_explanations = {
@@ -1040,9 +1073,7 @@ def generate_question(word_entry, all_words_in_cat, idx):
 
     # Collect meanings for all choices to generate detailed analysis
     choice_details = {}
-    # Correct answer
     choice_details[word] = meaning_str
-    # Distractors
     for d in distractors:
         d_meanings = d[2]
         d_meaning_str = "、".join(d_meanings) if isinstance(d_meanings, list) else d_meanings
@@ -1050,22 +1081,20 @@ def generate_question(word_entry, all_words_in_cat, idx):
         
     choices_analysis = []
     for choice in choices:
-        is_correct = (choice == word)
         meanings = choice_details.get(choice, "")
-        marker = "✅" if is_correct else "❌"
+        marker = "✅" if (choice == word) else "❌"
         choices_analysis.append(f"{marker} {choice} ({pos}): {meanings}")
     
     choices_str = "\n".join(choices_analysis)
 
-    # Rich Explanation with word meaning, full sentence, Chinese translation, and detailed analysis
     explanation = (
-        f"正確答案：{word}\n"
-        f"意思：{meaning_str}\n\n"
-        f"【題目解析】\n"
-        f"完整句子：{full_sentence}\n"
-        f"中文翻譯：{zh_sentence}\n"
-        f"💡 語法提示：{grammar_hint}\n\n"
-        f"【選項分析】\n"
+        f"Correct Answer: {word}\n"
+        f"Meaning: {meaning_str}\n\n"
+        f"【Parsing】\n"
+        f"Sentence: {full_sentence}\n"
+        f"Translation: {zh_sentence}\n"
+        f"💡 Grammar Hint: {grammar_hint}\n\n"
+        f"【Options Analysis】\n"
         f"{choices_str}"
     )
     
